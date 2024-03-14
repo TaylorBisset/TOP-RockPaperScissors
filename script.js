@@ -47,6 +47,20 @@ function playRound(playerSelection, computerSelection) {
             ties++;
         }
     }
+
+    if (playerSelection === "paper") {
+        if (computerSelection === "rock")
+        {
+            console.log("You win this round! \nPaper beats Rock!")
+            playerWins++;
+        } else if (computerSelection === "scissors") {
+            console.log("You lose this round! \nScissors beats Paper!")
+            computerWins++;
+        } else {
+            console.log("It's a tie!")
+            ties++;
+        }
+    }
 }
 
 function playGame() {
