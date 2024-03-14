@@ -3,12 +3,27 @@
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 3) + 1;
     let computerSelection; 
-    
-    // if 1 then computerSelection = rock
-    // if 2 then computerSelection = paper
-    // if 3 then computerSelection = scissors
+
+    if (randomNumber === 1) {
+        computerSelection = "rock";
+    } else if (randomNumber === 2) {
+        computerSelection = "paper";
+    } else {
+        computerSelection = "scissors";
+    }
 
     return computerSelection;
+}
+
+function getPlayerChoice() {
+    let playerSelection = window.prompt("Choose: Rock, Paper, or Scissors");
+    playerSelection = playerSelection.toLowerCase();
+
+    if (playerSelection != "rock" || "paper" || "scissors") {
+        playerSelection = window.prompt("Choose: Rock, Paper, or Scissors");
+    } else {
+        return playerSelection;
+    }
 }
 
 function playGame() {
