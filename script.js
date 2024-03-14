@@ -61,6 +61,20 @@ function playRound(playerSelection, computerSelection) {
             ties++;
         }
     }
+
+    if (playerSelection === "scissors") {
+        if (computerSelection === "paper")
+        {
+            console.log("You win this round! \nScissors beats Paper!")
+            playerWins++;
+        } else if (computerSelection === "rock") {
+            console.log("You lose this round! \nRock beats Scissors!")
+            computerWins++;
+        } else {
+            console.log("It's a tie!")
+            ties++;
+        }
+    }
 }
 
 function playGame() {
