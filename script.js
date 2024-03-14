@@ -1,8 +1,11 @@
 // script.js
 
-function playRound(playerSelection, computerSelection) 
-{
-    // your code here!
+function playGame() {
+    for (let i = 0; i < 5; i++) {
+        function playRound(playerSelection, computerSelection) {
+        // your code here!
+        }
+    }
 }
 
 const playerSelection = "rock";
