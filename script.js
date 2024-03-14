@@ -1,8 +1,14 @@
 // script.js
 
+let computerSelection;
+let playerSelection;
+
+let playerWins = 0;
+let computerWins = 0;
+let ties = 0;
+
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 3) + 1;
-    let computerSelection; 
 
     if (randomNumber === 1) {
         computerSelection = "rock";
@@ -16,27 +22,39 @@ function getComputerChoice() {
 }
 
 function getPlayerChoice() {
-    let playerSelection = window.prompt("Choose: Rock, Paper, or Scissors");
+    playerSelection = window.prompt("Choose: Rock, Paper, or Scissors");
     playerSelection = playerSelection.toLowerCase();
 
-    if (playerSelection != "rock" || "paper" || "scissors") {
+    if (playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissors") {
         playerSelection = window.prompt("Choose: Rock, Paper, or Scissors");
-    } else {
-        return playerSelection;
+    }
+    
+    return playerSelection;
+}
+
+function playRound(playerSelection, computerSelection) {
+
+    if (playerSelection === "rock") {
+        if (computerSelection === "scissors")
+        {
+            console.log("You win this round! \nRock beats Scissors!")
+            playerWins++;
+        } else if (computerSelection === "paper") {
+            console.log("You lose this round! \nPaper beats Rock!")
+            computerWins++;
+        } else {
+            console.log("It's a tie!")
+            ties++;
+        }
     }
 }
 
 function playGame() {
     for (let i = 0; i < 5; i++) {
-        let playerSelection = window.prompt("Choose: Rock, Paper, or Scissors");
-        playerSelection = playerSelection.toLowerCase();
+        getPlayerChoice();
         getComputerChoice();
-        function playRound(playerSelection, computerSelection) {
-        // your code here!
-        }
+        playRound(playerSelection, computerSelection);
     }
 }
 
-const playerSelection = "rock";
-const computerSelection = getComputerChoice();
 console.log(playRound(playerSelection, computerSelection));
