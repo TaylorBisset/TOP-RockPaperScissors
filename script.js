@@ -93,6 +93,14 @@ function playGame() {
         console.log("Ties:", ties);
         console.log("\n");
     }
+
+    if (playerWins > computerWins) {
+        console.log("Player beats Computer, ", playerWins, " to ", computerWins, "!");
+    } else if (computerWins > playerWins) {
+        console.log("Computer beats Player, ", computerWins, " to ", playerWins, "!");
+    } else {
+        console.log("It is a tie, with ", playerWins, " player wins and ", computerWins, "computer wins!");
+    }
 }
 
 playGame();
