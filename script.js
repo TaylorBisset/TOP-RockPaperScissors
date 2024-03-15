@@ -101,6 +101,13 @@ function playGame() {
     } else {
         console.log("It is a tie, with ", playerWins, " player wins and ", computerWins, "computer wins!");
     }
+    
+    console.log("- - - - - - - - - - - - - - - - - - - -");
+    console.log("- - - - - - - - - - - - - - - - - - - -");
+
+    playerWins = 0;
+    computerWins = 0;
+    ties = 0;
 }
 
 playGame();
