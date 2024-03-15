@@ -78,11 +78,21 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function playGame() {
-    for (let i = 0; i < 5; i++) {
+    for (let i = 1; i <= 5; i++) {
         playerSelection = getPlayerChoice();
         computerSelection = getComputerChoice();
+        
         playRound(playerSelection, computerSelection);
+
+        console.log("Round ", i);
+        console.log("Player", "\tvs\t", "Computer");
+        console.log(playerSelection, "\tvs\t", computerSelection);
+        console.log("- - - - - - - - - - - - - - - - - - - -")
+        console.log("Player wins:", playerWins);
+        console.log("Computer wins:", computerWins);
+        console.log("Ties:", ties);
+        console.log("\n");
     }
 }
 
-console.log(playRound(playerSelection, computerSelection));
+playGame();
